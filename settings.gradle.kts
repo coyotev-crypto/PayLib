@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -21,4 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PayLib"
 include(":app")
- 
+include(":pay")
