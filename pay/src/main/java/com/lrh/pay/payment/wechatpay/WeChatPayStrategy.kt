@@ -4,8 +4,8 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.util.Log
 import android.widget.Toast
+import com.lrh.pay.payment.PaymentStrategy
 import com.lrh.pay.payment.paydata.WechatPayRequest
-import com.lrh.payment_module.payment.PaymentStrategy
 import com.tencent.mm.opensdk.modelpay.PayReq
 import com.tencent.mm.opensdk.openapi.IWXAPI
 import com.tencent.mm.opensdk.openapi.WXAPIFactory
