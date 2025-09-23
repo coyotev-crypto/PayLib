@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.lrh.paylib"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.lrh.paylib"
