@@ -1,10 +1,8 @@
 package com.lrh.pay.payment
 
 import android.app.Activity
+import com.lrh.pay.payment.alipay.AlipayStrategy
 import com.lrh.pay.payment.wechatpay.WeChatPayStrategy
-import com.lrh.payment_module.payment.PaymentStrategy
-import com.lrh.payment_module.payment.PaymentType
-import com.lrh.payment_module.payment.alipay.AlipayStrategy
 
 /**
  * @ProjectName houyuan_yacht_app

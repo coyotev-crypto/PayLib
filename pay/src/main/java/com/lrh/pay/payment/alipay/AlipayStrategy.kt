@@ -1,10 +1,10 @@
-package com.lrh.payment_module.payment.alipay
+package com.lrh.pay.payment.alipay
 
 import android.app.Activity
 import com.alipay.sdk.app.EnvUtils
 import com.alipay.sdk.app.PayTask
+import com.lrh.pay.payment.PaymentStrategy
 import com.lrh.pay.payment.paydata.AliPayRequest
-import com.lrh.payment_module.payment.PaymentStrategy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
