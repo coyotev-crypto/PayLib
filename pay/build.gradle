@@ -1,12 +1,12 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-    id("maven-publish")
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
     namespace = "com.lrh.pay"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -17,11 +17,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -35,22 +32,22 @@ android {
 
 dependencies {
     // 微信支付 SDK JAR 包所需的配置
-    api(libs.wechat.sdk.android)
+    api("com.tencent.mm.opensdk:wechat-sdk-android:6.8.34")
     // 支付宝 SDK AAR 包所需的配置
-    api(libs.alipaysdk.android)
-    implementation(libs.kotlinx.coroutines.core)
+    api("com.alipay.sdk:alipaysdk-android:15.8.38")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
 }
 
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("release") {
-                groupId = "com.lrh.pay"
-                artifactId = "paylib"
-                version = "1.0.0"
+            release(MavenPublication) {
+                groupId = 'com.lrh.pay'
+                artifactId = 'paylib'
+                version = '1.0.0'
 
                 afterEvaluate {
-                    from(components["release"])
+                    from components.release
                 }
             }
         }
