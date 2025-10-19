@@ -1,6 +1,7 @@
 package com.lrh.pay.payment.alipay
 
 import android.app.Activity
+import android.util.Log
 import com.alipay.sdk.app.EnvUtils
 import com.alipay.sdk.app.PayTask
 import com.lrh.pay.payment.PaymentStrategy
@@ -33,7 +34,8 @@ class AlipayStrategy : PaymentStrategy {
         mJob = mBackgroundScope.launch {
             val alipay = PayTask(activity)
             //支付结果已服务端为准，此处不做处理
-            alipay.payV2(data.toString(), true)
+            val result = alipay.payV2(data.toString(), true)
+            Log.d("AlipayStrategy", "result: $result")
         }
     }
 }
