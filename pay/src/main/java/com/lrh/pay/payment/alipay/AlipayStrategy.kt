@@ -34,7 +34,7 @@ class AlipayStrategy : PaymentStrategy {
         mJob = mBackgroundScope.launch {
             val alipay = PayTask(activity)
             //支付结果已服务端为准，此处不做处理
-            val result = alipay.payV2(data.toString(), true)
+            val result = alipay.payV2(data.payInfo, true)
             Log.d("AlipayStrategy", "result: $result")
         }
     }
